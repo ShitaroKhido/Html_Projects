@@ -1,0 +1,29 @@
+@import "variable";
+
+@mixin navbar-styles {
+    .nav{
+        display: flex;
+        @content;
+        &-item{
+            list-style: none;
+            @content;
+            .nav-link{
+                text-decoration: none;
+                color: $nav-link-primary;
+                @include btn-secondary($btn-link-color-secondary);
+                @content;
+            }
+        }
+        @content;
+    }
+}
+
+@mixin btn-secondary($btn-color , $margin:10px){
+    padding: 10px;
+    margin: $margin;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s border;
+    &:hover{
+        border-bottom: 2px solid $btn-color;
+    }
+}

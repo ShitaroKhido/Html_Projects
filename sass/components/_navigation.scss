@@ -1,0 +1,22 @@
+@import "variable";
+@import "mixin";
+nav{
+    display: flex;
+    margin: 40px 0px;
+    width: 70%;
+    justify-content: space-between;
+    .#{&}-left{
+        display: flex;
+        align-items: flex-end;
+        @include navbar-styles;
+        .nav{
+            margin-left: -40px;
+        }
+        .nav-logo{
+            width: 120px;
+        }
+    } 
+    .#{&}-right{
+        @include navbar-styles;
+    }
+}
