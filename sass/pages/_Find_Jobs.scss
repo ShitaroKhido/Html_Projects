@@ -1,0 +1,39 @@
+@import "../components/Variable";
+@import "../components/Mixin";
+
+
+.find-jobs{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    .page-title{
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        margin-top: -5%;
+        margin-bottom: 10%;
+    }
+    .side{
+        flex: 1;
+    }
+    .card-container{
+        flex: 9;
+        .card-detail{
+            width: 100%;
+        }
+        .see-more{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            a{
+                text-decoration: none;
+                color: $fontColor-primary;
+                &:hover{
+                    color: $fontColor-secondary;
+                }
+            }
+        }
+    }
+}

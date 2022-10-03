@@ -1,0 +1,6 @@
+@import "./Variable";
+@import "./Mixin";
+
+.btn{
+    @include button;
+}

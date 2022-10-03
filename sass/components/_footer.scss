@@ -1,0 +1,26 @@
+@import "./Variable";
+@import "./Mixin";
+
+footer{
+    text-align: center;
+    .#{&}-nav{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .footer-logo{
+            width: 100px;
+        }
+        ul{
+            display: flex;
+            .nav-item{
+                @include navItem(24px);
+                font-weight: 600;
+            }
+        }        
+    }
+    .footer-text{
+        margin: 40px 0px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+}

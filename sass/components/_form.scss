@@ -1,0 +1,106 @@
+@import "./Variable";
+@import "./Mixin";
+
+.create-cv{
+    form{
+        width: 80%;
+        display: grid;
+        gap: 10px;
+        background-color:#fbfbfb ;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: relative;
+        top: 0;
+        transition: 0.3s top, 0.3s box-shadow;
+        @include card-hover;
+        legend{
+            font-size: 30px;
+            font-weight: 600;
+            margin: 5% 0px;
+        }
+        input[type=text], input[type=number], input[type=password], input[type=email]{
+            padding: 14px;
+            border-radius: 30px;
+            border: 2px solid #f0f0f0;
+        }
+        .name, .address, .info{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            input{
+                width: 50%;
+            }
+        }
+        .password{
+            display: grid;
+            gap: 10px;
+            input{
+                width: 94%;
+            }
+        }
+        .check{
+            margin: 10px 0px;
+        }
+        .submit{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+            .form-logo{
+                width: 80px;
+            }
+            .btn{
+                padding: 12px 20px;
+            }
+        }
+    }
+}
+
+.login{
+    width: 100%;
+    form{
+        width: fit-content;
+        padding: 30px;
+        border-radius: 20px;
+        background-color:#fbfbfb ;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        position: relative;
+        top: 0;
+        transition: 0.3s top, 0.3s box-shadow;
+        @include card-hover;
+        legend{
+            margin-bottom: 10%;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .username{
+            input{
+                width: 290px;
+                border: 1px solid #f0f0f0;
+                padding: 14px;
+                border-radius: 30px;
+                margin-bottom: 10%;
+            }
+        }
+        .password{
+            @extend .username;
+        }
+        .submit{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .btn{
+                padding: 12px 20px;
+            }
+            .forget{
+                text-decoration: none;
+                color: $fontColor-primary;
+                transition: 0.3s color;
+                &:hover{
+                    color: $fontColor-secondary;
+                }
+            }
+        }
+    }
+}

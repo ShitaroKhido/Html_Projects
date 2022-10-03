@@ -1,0 +1,48 @@
+@use "sass:map";
+@import "./Variable";
+
+@function screen($size){
+    @return map-get($breakpoint, $size);
+}
+
+
+
+@media screen and(max-width:screen("M")) {
+    nav{
+        .#{&}-right{
+            flex-direction: row;
+            .nav-list:nth-child(2){
+                display: none;
+            }
+        }
+    }
+    footer{
+        .#{&}-nav{
+            ul{
+                display: none;
+            }
+        }
+    }
+    .card{
+        width: 80%;
+        #{&}-foot{
+            align-items: flex-start;
+            .tags{
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                font-size: 8px;
+            }
+        }
+    }
+    .card-detail{
+        width: 80%;
+        #{&}-foot{
+            align-items: flex-start;
+            .tags{
+                justify-content: flex-end;
+                flex-wrap: wrap;
+                font-size: 8px;
+            }
+        }
+    }
+}

@@ -1,4 +1,16 @@
-@font-face {
-    font-family: Inter;
-    src: url(../../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
-}
+
+
+// Colors
+$border-primary:#4A596D;
+// $fontColor-primary: #202020;
+$fontColor-primary: #4A596D;
+// $fontColor-secondary: #00c3ff;
+$fontColor-secondary: #006eb7;
+
+// Screen size
+
+$breakpoint:(
+    "S": 512px,
+    "M": 800px,
+    "L": 1024
+)

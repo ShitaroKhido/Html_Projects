@@ -1,0 +1,38 @@
+@import "../components/Variable";
+@import "../components/Mixin";
+
+.services{
+    display: flex;
+    justify-content: center;
+    @include goFlexColumn;
+    .service-section{
+        text-align: center;
+        margin-bottom: 25%;
+        .service-title{
+            font-size: 40px;
+        }
+    }
+    .feedback{
+        .feedback-title{
+            margin-bottom: 10%;
+            text-align: center;
+            font-size: 40px;
+        }
+        .service-card-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+}
+.go-down{
+    position: relative;
+    margin: {
+        left: auto;
+        right: auto;
+    };
+    margin-bottom: 20%;
+    text-decoration: none;
+    color: $fontColor-primary;
+}

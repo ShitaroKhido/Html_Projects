@@ -1,0 +1,60 @@
+@import "./Variable";
+
+@mixin goFlexColumn{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @content;
+}
+
+@mixin navItem($margin:none, $fontColor:$fontColor-primary,$color:$border-primary, $background:none) {
+    list-style: none;
+        .nav-link{
+            @include navLink($margin, $fontColor, $color, $background);
+        }
+    @content;
+}
+
+@mixin navLink($m, $fc, $c, $bg){
+    text-decoration: none;
+    padding: 10px;
+    margin: $m;
+    color: $fc;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s border-bottom;
+    &:hover{
+        color: $fontColor-secondary;
+        background-color: $bg;
+        border-bottom: 2px solid $c;    
+    }
+}
+
+@mixin active-link($c:$border-primary, $bg:none) {
+        color: $fontColor-secondary;
+        background-color: $bg;
+        border-bottom: 2px solid $c;   
+}
+
+@mixin button($c:$fontColor-primary, $bc:$fontColor-primary, $bgc:#f1f1f1, $p:10px 12px) {
+    text-decoration: none;
+    padding: $p;
+    color: $c;
+    border-radius: 20px;
+    background-color: $bgc;
+    transition: 0.3s box-shadow, 0.3s color;
+    &:hover{
+        color: $fontColor-secondary;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        cursor: pointer;
+        @content;
+    }
+    @content;
+}
+
+@mixin card-hover {
+    &:hover{
+        cursor: pointer;
+        top: -10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 10px 20px 0px;
+    }
+}
