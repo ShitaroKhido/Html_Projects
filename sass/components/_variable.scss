@@ -1,7 +1,7 @@
 
 
 // Colors
-$border-primary:#4A596D;
+$border-primary:#f0f0f0;
 // $fontColor-primary: #202020;
 $fontColor-primary: #4A596D;
 // $fontColor-secondary: #00c3ff;
@@ -12,5 +12,6 @@ $fontColor-secondary: #006eb7;
 $breakpoint:(
     "S": 512px,
     "M": 800px,
-    "L": 1024
+    "L": 1024px,
+    "XL":1256px,
 )

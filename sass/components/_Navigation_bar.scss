@@ -2,6 +2,7 @@
 @import "./Mixin";
 
 .navbar{
+    z-index: 1;
     width: 100%;
     display: flex;
     align-items: flex-end;
@@ -19,6 +20,24 @@
         display: flex;
         flex-flow: row-reverse wrap;
         justify-content: space-between;
+        .nav-list:nth-child(1){
+            .menu-btn{
+                border: transparent;
+                font-size: 16px;
+                background-color: transparent;
+                @include navItem
+                
+            }
+            .nav-list-collapse{
+                z-index: 0;
+                display: none;
+                margin-top: 10px;
+                margin-left: -40px;
+                position: absolute;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
         .nav-list{
             display: flex;
             margin-left: -40px;
@@ -28,7 +47,13 @@
                     @include active-link;
                 }
             }
-            
+            .menu{
+                display: none;
+                .menu-btn{
+                    display: flex;
+                    align-items: center;
+                }
+            }
         }
     }
 }

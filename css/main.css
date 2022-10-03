@@ -3,6 +3,7 @@
   src: url(../../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
 }
 .navbar {
+  z-index: 1;
   width: 100%;
   display: flex;
   align-items: flex-end;
@@ -19,6 +20,34 @@
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: space-between;
+}
+.navbar .nav-right .nav-list:nth-child(1) .menu-btn {
+  border: transparent;
+  font-size: 16px;
+  background-color: transparent;
+  list-style: none;
+}
+.navbar .nav-right .nav-list:nth-child(1) .menu-btn .nav-link {
+  text-decoration: none;
+  padding: 10px;
+  margin: none;
+  color: #4A596D;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s border-bottom;
+}
+.navbar .nav-right .nav-list:nth-child(1) .menu-btn .nav-link:hover {
+  color: #006eb7;
+  background-color: none;
+  border-bottom: 2px solid #f0f0f0;
+}
+.navbar .nav-right .nav-list:nth-child(1) .nav-list-collapse {
+  z-index: 0;
+  display: none;
+  margin-top: 10px;
+  margin-left: -40px;
+  position: absolute;
+  flex-direction: column;
+  gap: 20px;
 }
 .navbar .nav-right .nav-list {
   display: flex;
@@ -38,12 +67,19 @@
 .navbar .nav-right .nav-list .nav-item .nav-link:hover {
   color: #006eb7;
   background-color: none;
-  border-bottom: 2px solid #4A596D;
+  border-bottom: 2px solid #f0f0f0;
 }
 .navbar .nav-right .nav-list .nav-item .active {
   color: #006eb7;
   background-color: none;
-  border-bottom: 2px solid #4A596D;
+  border-bottom: 2px solid #f0f0f0;
+}
+.navbar .nav-right .nav-list .menu {
+  display: none;
+}
+.navbar .nav-right .nav-list .menu .menu-btn {
+  display: flex;
+  align-items: center;
 }
 
 footer {
@@ -75,7 +111,7 @@ footer .footer-nav ul .nav-item .nav-link {
 footer .footer-nav ul .nav-item .nav-link:hover {
   color: #006eb7;
   background-color: none;
-  border-bottom: 2px solid #4A596D;
+  border-bottom: 2px solid #f0f0f0;
 }
 footer .footer-text {
   margin: 40px 0px;
@@ -214,7 +250,7 @@ footer .footer-text {
 .search-section .search-box input[type=search] {
   width: 100%;
   border-radius: 26px;
-  border: 1px solid #4A596D;
+  border: 2px solid #f0f0f0;
   padding: 14px;
   outline: none;
 }
@@ -366,12 +402,32 @@ footer .footer-text {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1256px) {
+  .find-jobs .side .side-card-container {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 800px) {
   nav .nav-right {
     flex-direction: row;
   }
   nav .nav-right .nav-list:nth-child(2) {
     display: none;
+  }
+  .navbar {
+    align-items: center;
+  }
+  .navbar .nav-right .nav-list:nth-child(1) {
+    align-items: center;
+  }
+  .navbar .nav-right .nav-list:nth-child(1) .menu {
+    display: block;
+  }
+  .navbar .nav-right .nav-list:nth-child(1) .menu .btn {
+    border: none;
+  }
+  .navbar .nav-right .nav-list:nth-child(1) .menu:hover .nav-list-collapse {
+    display: flex;
   }
   footer .footer-nav ul {
     display: none;
@@ -444,6 +500,22 @@ main .page-num a {
 }
 .find-jobs .side {
   flex: 1;
+}
+.find-jobs .side .side-card-container {
+  margin-top: -16%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.find-jobs .side .side-card-container .side-title .sTitle {
+  font-size: 24px;
+  font-weight: 600;
+}
+.find-jobs .side .side-card-container .card-detail {
+  width: 100%;
 }
 .find-jobs .card-container {
   flex: 9;

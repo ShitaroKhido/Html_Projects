@@ -5,7 +5,15 @@
     @return map-get($breakpoint, $size);
 }
 
-
+@media screen and(max-width:screen("XL")) {
+    .find-jobs{
+        .side{
+            .side-card-container{
+                display: none !important;
+            }
+        }
+    }  
+}
 
 @media screen and(max-width:screen("M")) {
     nav{
@@ -13,6 +21,23 @@
             flex-direction: row;
             .nav-list:nth-child(2){
                 display: none;
+            }
+        }
+    }
+    .navbar{
+        align-items: center;
+        .nav-right{
+            .nav-list:nth-child(1){
+                align-items: center;
+                .menu{
+                    display: block;
+                    .btn{
+                        border: none;
+                    }
+                }
+                .menu:hover  .nav-list-collapse {
+                    display: flex;
+                }
             }
         }
     }
@@ -46,3 +71,4 @@
         }
     }
 }
+
